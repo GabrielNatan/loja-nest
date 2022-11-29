@@ -3,9 +3,9 @@ import { UsuarioRepository } from "./usuarios.repository";
 
 @Controller('/usuarios')
 export class UsuarioController {
-    
-    private usuarioRepository = new UsuarioRepository();
 
+    constructor(private usuarioRepository: UsuarioRepository){}
+    
     @Post()
     async criaUsuario(@Body() dadosDoUsuario){
         this.usuarioRepository.salvar(dadosDoUsuario)
