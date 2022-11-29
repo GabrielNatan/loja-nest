@@ -3,6 +3,9 @@ export class UsuarioRepository{
 
     async salvar(usuario){
         this.usuarios.push(usuario)
-        console.log(usuario)
+    }
+
+    async listar(){
+        return this.usuarios
     }
 }
